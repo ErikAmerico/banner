@@ -15,13 +15,13 @@ let currentColorIndex = 0;
 
 function animateGradient() {
   // Update percentages
-  primaryPercent += 0.2;
-  secondaryPercent += 0.2;
+  primaryPercent += 0.6;
+  secondaryPercent += 0.6;
 
   // When the primary gradient reaches 100%, reset the percentages and switch colors
   if (primaryPercent >= 100) {
-    primaryPercent = -125; // Restart from the beginning
-    secondaryPercent = 25; // Start secondary after some overlap
+    primaryPercent = -110; // Restart from the beginning
+    secondaryPercent = 10; // Start secondary after some overlap
     currentColorIndex = (currentColorIndex + 1) % colors.length; // Switch to the next color pattern
   }
 
@@ -30,8 +30,8 @@ function animateGradient() {
 
   // Set the gradient with overlapping effect
   banner.style.background = `
-    linear-gradient(to right, 
-      ${currentColors.start} ${primaryPercent}%, 
+    linear-gradient(to right,
+      ${currentColors.start} ${primaryPercent}%,
       ${currentColors.end} ${secondaryPercent}%)
   `;
 
